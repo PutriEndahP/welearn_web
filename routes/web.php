@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,9 @@ Route::get('/home', [HomeController::class,'show']);
 Auth::routes();
 
 Route::get('/user', [UserController::class,'showUser']);
+Auth::routes();
+
+Route::get('/dashboard', [DashboardController::class,'showDashboard']);
 Auth::routes();
 
 // Auth::routes();
