@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Route::get('/', [LandingController::class,'index']);
 Auth::routes();
 
 Route::get('/home', [HomeController::class,'show']);
+Auth::routes();
+
+Route::get('/user', [UserController::class,'showUser']);
 Auth::routes();
 
 // Auth::routes();
