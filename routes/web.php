@@ -5,6 +5,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SoalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,9 @@ Route::get('/user', [UserController::class,'showUser']);
 Auth::routes();
 
 Route::get('/dashboard', [DashboardController::class,'showDashboard']);
+Auth::routes();
+
+Route::get('/soal_huruf', [SoalController::class,'showSoalHuruf']);
 Auth::routes();
 
 // Auth::routes();
