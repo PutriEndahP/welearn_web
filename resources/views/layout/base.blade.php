@@ -476,7 +476,7 @@
                                         <a href="{{url('soal_huruf')}}">Soal Huruf</a>
                                     </li>
                                     <li>
-                                        <a href="{{url('home')}}">Soal Angka</a>
+                                        <a href="{{url('soal_angka')}}">Soal Angka</a>
                                     </li>
                                 </ul>
                             </li>
