@@ -467,7 +467,7 @@
                         <ul class="nav-main">
                             <!-- <li class="nav-main-heading" style="padding: 0px 18px 6px 18px;"><span class="sidebar-mini-visible" >UI</span><span class="sidebar-mini-hidden">User Interface</span></li> -->
                             <li>
-                                <a data-toggle="nav-submenu" href="#" ><i class="si si-trophy"></i><span class="sidebar-mini-hide">Dashboard</span></a>
+                                <a data-toggle="nav-submenu" href="#" ><i class="fa fa-bar-chart"></i><span class="sidebar-mini-hide">Dashboard</span></a>
                             </li>
                             <li>
                                 <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-note"></i><span class="sidebar-mini-hide">Soal</span></a>
@@ -484,7 +484,7 @@
                                 <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user"></i><span class="sidebar-mini-hide">User</span></a>
                                 <ul>
                                     <li>
-                                        <a href="be_ui_grid.html">Pegaturan</a>
+                                        <a href="be_ui_grid.html">Data User</a>
                                     </li>
                                 </ul>
                             </li>
