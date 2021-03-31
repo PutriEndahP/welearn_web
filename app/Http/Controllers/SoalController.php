@@ -11,4 +11,9 @@ class SoalController extends Controller
     {
         return view('soal.soalhuruf');
     }
+
+    public function showSoalAngka()
+    {
+        return view('soal.soalangka');
+    }
 }

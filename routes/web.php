@@ -37,6 +37,9 @@ Auth::routes();
 Route::get('/soal_huruf', [SoalController::class,'showSoalHuruf']);
 Auth::routes();
 
+Route::get('/soal_angka', [SoalController::class,'showSoalAngka']);
+Auth::routes();
+
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
