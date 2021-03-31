@@ -27,8 +27,8 @@
                         <span class="badge badge-primary">117</span>
                     </td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View Details">
-                            <i class="fa fa-pencil-square-o"></i>
+                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
+                            <i class="fa fa-file-o"></i>
                         </button>
                         <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
                             <i class="fa fa-trash"></i>
@@ -43,8 +43,8 @@
                         <span class="badge badge-primary">110</span>
                     </td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View Details">
-                            <i class="fa fa-pencil-square-o"></i>
+                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
+                            <i class="fa fa-file-o"></i>
                         </button>
                         <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
                             <i class="fa fa-trash"></i>
@@ -59,8 +59,8 @@
                         <span class="badge badge-primary">90</span>
                     </td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View Details">
-                            <i class="fa fa-pencil-square-o"></i>
+                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
+                            <i class="fa fa-file-o"></i>
                         </button>
                         <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
                             <i class="fa fa-trash"></i>
@@ -75,8 +75,8 @@
                         <span class="badge badge-primary">78</span>
                     </td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View Details">
-                            <i class="fa fa-pencil-square-o"></i>
+                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
+                            <i class="fa fa-file-o"></i>
                         </button>
                         <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
                             <i class="fa fa-trash"></i>
@@ -91,8 +91,8 @@
                         <span class="badge badge-primary">50</span>
                     </td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View Details">
-                            <i class="fa fa-pencil-square-o"></i>
+                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
+                            <i class="fa fa-file-o"></i>
                         </button>
                         <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
                             <i class="fa fa-trash"></i>
