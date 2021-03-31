@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>Codebase - Bootstrap 4 Admin Template &amp; UI Framework</title>
+        <title>Welearn</title>
 
         <meta name="description" content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
         <meta name="author" content="pixelcave">
@@ -419,7 +419,7 @@
                             <div class="content-header-item">
                                 <a class="link-effect font-w700" href="index.html">
                                     <!-- <i class="si si-fire text-primary"></i> -->
-                                    <span class="font-size-xl text-dual-primary-dark">Welearn</span><span class="font-size-xl text-primary"> Website</span>
+                                    <span class="font-size-xl text-dual-primary-dark" style="font-size: 15px;">Welearn</span><span class="font-size-xl text-primary"> Website</span>
                                 </a>
                             </div>
                             <!-- END Logo -->
@@ -588,10 +588,10 @@
             <footer id="page-footer" class="opacity-0">
                 <div class="content py-20 font-size-xs clearfix">
                     <div class="float-right">
-                        Crafted with <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+                        Made with <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="https://1.envato.market/ydb" target="_blank">Welearn</a>
                     </div>
                     <div class="float-left">
-                        <a class="font-w600" href="https://1.envato.market/95j" target="_blank">Codebase 3.0</a> &copy; <span class="js-year-copy">2017</span>
+                        <a class="font-w600" href="https://1.envato.market/95j" target="_blank">Welearn</a> &copy; <span class="js-year-copy">2021</span>
                     </div>
                 </div>
             </footer>
