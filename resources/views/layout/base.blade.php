@@ -624,10 +624,12 @@
             Custom functionality including Blocks/Layout API as well as other vital and optional helpers
             webpack is putting everything together at assets/_es6/main/app.js
         -->
-        <script src="{{asset('codebase/src/assets/js/codebase.app.min.js')}}"></script>
-
+        <script src="{{asset('codebase/src/assets/js/codebase.app.min.js')}}"></script> 
+        <script src="{{ asset('codebase/src/assets/js/pages/be_tables_datatables.min.js')}}"></script>
         <!-- Page JS Plugins -->
         <script src="{{asset('codebase/src/assets/js/plugins/chartjs/Chart.bundle.min.js')}}"></script>
+        <script src="{{ asset('codebase/src/assets/js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+        <script src="{{ asset('codebase/src/assets/js/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
         <!-- Page JS Code -->
         <script src="{{asset('codebase/src/assets/js/pages/be_pages_dashboard.min.js')}}"></script>

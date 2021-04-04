@@ -106,5 +106,5 @@
 @endsection
 
 @section('js_tambahan')
-    {{-- tulis di sini --}}
+
 @endsection
