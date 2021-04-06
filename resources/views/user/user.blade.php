@@ -21,7 +21,7 @@
             <tbody>
                 <tr>
                     <td class="text-center">1</td>
-                    <td class="font-w600">Evania Harahap</td>
+                    <td class="font-w600">Evania Harahap P</td>
                     <td class="d-none d-sm-table-cell">liliharahap@gmail.com</td>
                     <td class="d-none d-sm-table-cell">
                         <span class="badge badge-primary">117</span>
