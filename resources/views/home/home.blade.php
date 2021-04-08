@@ -13,7 +13,7 @@
                     <div class="mb-20">
                         <i class="fa fa-users fa-4x text-default-light"></i>
                     </div>
-                    <div class="font-size-h4 font-w600 text-white">1,2rb</div>
+                    <div class="font-size-h4 font-w600 text-white">{{$count}}</div>
                     <div class="text-white-op">Jumlah user welearn</div>
                     <div class="pt-20">
                         <a class="btn btn-rounded btn-alt-primary" href="javascript:void(0)">
