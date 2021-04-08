@@ -4,7 +4,7 @@
 <!-- Dynamic Table Full -->
 <div class="block">
     <div class="block-header block-header-default">
-        <h3 class="block-title">Data Soal Huruf Angka</h3>
+        <h3 class="block-title">Data Soal Angka</h3>
     </div>
     <div class="block-content block-content-Dynamic Table Fullfull">
         <!-- DataTables functionality is initialized with .js-dataTable-full class in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
