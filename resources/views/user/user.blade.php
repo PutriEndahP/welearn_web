@@ -29,9 +29,11 @@
                         <span class="badge badge-primary">117</span>
                     </td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
-                            <i class="fa fa-file-o"></i>
-                        </button>
+                        <a href="{{url('view_user')}}">
+                            <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
+                                <i class="fa fa-file-o"></i>
+                            </button>
+                        </a>
                         <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
                             <i class="fa fa-trash"></i>
                         </button>

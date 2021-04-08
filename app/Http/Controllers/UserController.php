@@ -17,4 +17,9 @@ class UserController extends Controller
         //query score
         return view('user.user', $data);
     }
+
+    public function viewUser()
+    {
+        return view('user.view');
+    }
 }
