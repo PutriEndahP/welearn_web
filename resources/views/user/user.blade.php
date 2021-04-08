@@ -19,10 +19,12 @@
                 </tr>
             </thead>
             <tbody>
+            <?php $i=0; ?>
+            @foreach($users as $key=>$user)
                 <tr>
-                    <td class="text-center">1</td>
-                    <td class="font-w600">Evania Harahap P</td>
-                    <td class="d-none d-sm-table-cell">liliharahap@gmail.com</td>
+                    <td class="text-center">{{++$i}}</td>
+                    <td class="font-w600">{{$user->name}}</td>
+                    <td class="d-none d-sm-table-cell">{{$user->email}}</td>
                     <td class="d-none d-sm-table-cell">
                         <span class="badge badge-primary">117</span>
                     </td>
@@ -35,70 +37,7 @@
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td class="text-center">2</td>
-                    <td class="font-w600">Glen Putra Baihaqi</td>
-                    <td class="d-none d-sm-table-cell">sasmitap@gmail.com</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-primary">110</span>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
-                            <i class="fa fa-file-o"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">3</td>
-                    <td class="font-w600">Dina Zainina</td>
-                    <td class="d-none d-sm-table-cell">rayahu@gmail.com</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-primary">90</span>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
-                            <i class="fa fa-file-o"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">4</td>
-                    <td class="font-w600">Putra Mahardika</td>
-                    <td class="d-none d-sm-table-cell">siskapr@gmail.com</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-primary">78</span>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
-                            <i class="fa fa-file-o"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">5</td>
-                    <td class="font-w600">Emanuel Candra</td>
-                    <td class="d-none d-sm-table-cell">indahsekar@gmail.com</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-primary">50</span>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
-                            <i class="fa fa-file-o"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                </tr>
-            </tbody>
+            @endforeach
         </table>
     </div>
 </div>

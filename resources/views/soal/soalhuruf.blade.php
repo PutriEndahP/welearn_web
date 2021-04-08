@@ -6,6 +6,9 @@
     <div class="block-header block-header-default">
         <h3 class="block-title">Data Soal Huruf Abjad</h3>
     </div>
+    <div class="container">
+        <button type="button" class="btn btn-warning">Tambah Soal</button>
+    </div>
     <div class="block-content block-content-Dynamic Table Fullfull">
         <!-- DataTables functionality is initialized with .js-dataTable-full class in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
         <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
