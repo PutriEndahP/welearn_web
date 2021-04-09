@@ -20,6 +20,7 @@ class UserController extends Controller
 
     public function viewUser()
     {
-        return view('user.view');
+        $data['users'] = DB::table('users')->get();
+        return view('user.view', $data);
     }
 }
