@@ -9,15 +9,15 @@
     <div class="col-md-4">
         <div class="block block-transparent bg-default">
             <div class="block-content block-content-full">
-                <div class="py-100 text-center">
-                    <div class="mb-20">
+                <div class="py-50 text-center">
+                    <div class="mb-5">
                         <i class="fa fa-users fa-4x text-default-light"></i>
                     </div>
-                    <div class="font-size-h2 font-w700 text-white">{{$count}}</div>
-                    <div class="text-white-op">Jumlah user welearn</div>
+                    <div class="font-size-h1 font-w1000 text-white">{{$count}}</div>
+                    <div class="font-size-h5 font-w1000 text-white">Jumlah user welearn</div>
                     <div class="pt-20">
                         <a class="btn btn-rounded btn-alt-primary" href="javascript:void(0)">
-                            <i></i> See details
+                        <i class="fa fa-users mr-10"></i> See details
                         </a>
                     </div>
                 </div>
@@ -27,15 +27,15 @@
     <div class="col-md-4">
         <div class="block block-transparent bg-success">
             <div class="block-content block-content-full">
-                <div class="py-100 text-center">
-                    <div class="mb-20">
+                <div class="py-50 text-center">
+                    <div class="mb-5">
                         <i class="fa fa-trophy fa-4x text-success-light"></i>
                     </div>
-                    <div class="font-size-h2 font-w700 text-white">117</div>
-                    <div class=" text-white-op">Score tertinggi soal huruf</div>
+                    <div class="font-size-h1 font-w1000 text-white"></div>
+                    <div class="font-size-h5 font-w1000 text-white">Score tertinggi soal huruf</div>
                     <div class="pt-20">
                         <a class="btn btn-rounded btn-alt-success" href="javascript:void(0)">
-                            <i></i> See details
+                        <i class="fa fa-trophy mr-10"></i> See details
                         </a>
                     </div>
                 </div>
@@ -45,15 +45,15 @@
     <div class="col-md-4">
         <div class="block block-transparent bg-info">
             <div class="block-content block-content-full">
-                <div class="py-100 text-center">
-                    <div class="mb-20">
+                <div class="py-50 text-center">
+                    <div class="mb-5">
                         <i class="fa fa-trophy fa-4x text-success-light"></i>
                     </div>
-                    <div class="font-size-h2 font-w700 text-white">117</div>
-                    <div class="text-white-op">Score tertinggi soal angka</div>
+                    <div class="font-size-h1 font-w1000 text-white">117</div>
+                    <div class="font-size-h5 font-w1000 text-white">Score tertinggi soal angka</div>
                     <div class="pt-20">
                         <a class="btn btn-rounded btn-alt-info" href="javascript:void(0)">
-                            <i class="fa fa-users mr-5"></i> See details
+                            <i class="fa fa-trophy mr-10"></i> See details
                         </a>
                     </div>
                 </div>

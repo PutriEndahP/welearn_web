@@ -17,11 +17,11 @@ class Soal extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'username',
-        'email',
-        'password',
-        'jenis_kelamin',
+        'jenis_soal',
+        'level',
+        'isi_soal',
+        'keterangan',
+        'jawaban',
     ];
 
     /**
