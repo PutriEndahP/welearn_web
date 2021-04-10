@@ -31,15 +31,21 @@
                         <span class="badge badge-danger">Level {{$soal->id_level}}</span>
                     </td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="View Soal">
-                            <i class="fa fa-file-o"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="Edit Soal">
-                            <i class="fa fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete Soal">
-                            <i class="fa fa-trash"></i>
-                        </button>
+                        <a href="">
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="View Soal">
+                                <i class="fa fa-file-o"></i>
+                            </button>
+                        </a>
+                        <a href="{{url('/soal_huruf/edit')}}">
+                            <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="Edit Soal">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </a>
+                        <a href="">
+                            <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete Soal">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
                     </td>
                 </tr>
                 @endforeach

@@ -40,6 +40,11 @@ class SoalController extends Controller
         }
     }
 
+    public function editSoalHuruf()
+    {
+        return view('soal.editsoalhuruf');
+    }
+
     public function showSoalAngka()
     {
         return view('soal.soalangka');
