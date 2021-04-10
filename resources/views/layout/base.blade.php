@@ -433,7 +433,7 @@
                         <!-- Visible only in mini mode -->
                         <div class="sidebar-mini-visible-b align-v animated fadeIn">
                             <img class="img-avatar img-avatar32" src="{{asset('img/welearn.png')}}" alt="">
-                            
+
                         </div>
                         <!-- END Visible only in mini mode -->
 
@@ -441,8 +441,13 @@
                         <div class="sidebar-mini-hidden-b text-center">
                             <a class="img-link" href="be_pages_generic_profile.html">
                                 <img class="img-avatar" src="{{asset('img/welearn.png')}}" alt="">
-                                <br> </br>
-                                    <!-- <a class="link-effect text-dual-primary-dark font-size-xs font-w300 text-uppercase" href="be_pages_generic_profile.html">More practice, Good result</a> -->
+                            <ul class="list-inline mt-2">
+                            <li class="list-inline-item">
+                                    <a class="font-size-l text-dual-primary-dark" style="font-size: 7px;" href="be_pages_generic_profile.html">Practice more, Good result</a>
+                                    <!-- <span class="font-size-xl text-dual-primary-dark" style="font-size: 15px;">Welearn</span><span class="font-size-xl text-primary"> Website</span> -->
+                                </li>
+            </ul>
+                            
                             </a>
                             <ul class="list-inline mt-10">
                                 <li class="list-inline-item">
