@@ -16,7 +16,7 @@
                     <div class="font-size-h1 font-w1000 text-white">{{$count}}</div>
                     <div class="font-size-h5 font-w1000 text-white">Jumlah user welearn</div>
                     <div class="pt-20">
-                        <a class="btn btn-rounded btn-alt-primary" href="javascript:void(0)">
+                        <a class="btn btn-rounded btn-alt-primary" href="{{url('user')}}">
                         <i class="fa fa-users mr-10"></i> See details
                         </a>
                     </div>
@@ -34,7 +34,7 @@
                     <div class="font-size-h1 font-w1000 text-white">117</div>
                     <div class="font-size-h5 font-w1000 text-white">Score tertinggi soal huruf</div>
                     <div class="pt-20">
-                        <a class="btn btn-rounded btn-alt-success" href="javascript:void(0)">
+                        <a class="btn btn-rounded btn-alt-success" href="{{url('score_huruf')}}">
                         <i class="fa fa-trophy mr-10"></i> See details
                         </a>
                     </div>
@@ -52,7 +52,7 @@
                     <div class="font-size-h1 font-w1000 text-white">117</div>
                     <div class="font-size-h5 font-w1000 text-white">Score tertinggi soal angka</div>
                     <div class="pt-20">
-                        <a class="btn btn-rounded btn-alt-info" href="javascript:void(0)">
+                        <a class="btn btn-rounded btn-alt-info" href="{{url('score_angka')}}">
                             <i class="fa fa-trophy mr-10"></i> See details
                         </a>
                     </div>

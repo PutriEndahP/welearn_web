@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SoalController;
+use App\Http\Controllers\ScoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,13 @@ Route::post('/storeSoalHuruf', [SoalController::class,'storeSoalHuruf']);
 Auth::routes();
 
 Route::get('/soal_angka', [SoalController::class,'showSoalAngka']);
+Auth::routes();
+
+// Score
+Route::get('/score_huruf', [ScoreController::class,'showScoreHuruf']);
+Auth::routes();
+
+Route::get('/score_angka', [ScoreController::class,'showScoreAngka']);
 Auth::routes();
 
 // Auth::routes();
