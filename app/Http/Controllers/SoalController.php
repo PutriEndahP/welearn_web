@@ -19,11 +19,11 @@ class SoalController extends Controller
         return view('soal.soalhuruf', $data);
     }
 
-    public function addSoalHuruf()
-    {
-        $data['soal'] = DB::table('soal')->get();        
-        return view('soal.soalhuruf', $data);
-    }
+    // public function addSoalHuruf()
+    // {
+    //     $data['soal'] = DB::table('soal')->get();        
+    //     return view('soal.soalhuruf', $data);
+    // }
 
     public function storeSoalHuruf(Request $request)
     {
@@ -36,7 +36,7 @@ class SoalController extends Controller
         $status = $newSoalHuruf->save();
         if($status)
         {
-            return redirect('/soal_huruf');
+            return redirect('/soal_huruf'); // redirect ke /route nya
         }
     }
 

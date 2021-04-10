@@ -10,7 +10,11 @@ class Level extends Model
     use HasFactory;
 
     protected $table = 'level';
-    protected $primaryKey = 'id_level';
+    // protected $primaryKey = 'id_level';
+
+    protected $fillable = [
+        'id_level',
+    ];
 
     public $timestamps = false;
 }

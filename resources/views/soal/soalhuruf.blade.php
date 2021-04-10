@@ -20,12 +20,15 @@
                 </tr>
             </thead>
             <tbody>
+            <tbody>
+            <?php $i=0; ?>
+            @foreach($soal as $key=>$soal)
                 <tr>
-                    <td class="text-center">1</td>
-                    <td class="font-w600">B</td>
-                    <td class="d-none d-sm-table-cell">Tuliskan huruf B</td>
+                    <td class="text-center">{{++$i}}</td>
+                    <td class="font-w600">{{$soal->soal}}</td>
+                    <td class="d-none d-sm-table-cell">{{$soal->keterangan}}</td>
                     <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-danger">Level 1</span>
+                        <span class="badge badge-danger">Level {{$soal->id_level}}</span>
                     </td>
                     <td class="text-center">
                         <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="View Soal">
@@ -39,82 +42,7 @@
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td class="text-center">2</td>
-                    <td class="font-w600">G</td>
-                    <td class="d-none d-sm-table-cell">Tuliskan huruf G</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-danger">Level 1</span>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="View Soal">
-                            <i class="fa fa-file-o"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="Edit Soal">
-                            <i class="fa fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete Soal">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">3</td>
-                    <td class="font-w600">IBU</td>
-                    <td class="d-none d-sm-table-cell">Tuliskan huruf I B U</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-warning">Level 2</span>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="View Soal">
-                            <i class="fa fa-file-o"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="Edit Soal">
-                            <i class="fa fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete Soal">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">4</td>
-                    <td class="font-w600">BUKU</td>
-                    <td class="d-none d-sm-table-cell">Tuliskan huruf B U K U</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-info">Level 3</span>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="View Soal">
-                            <i class="fa fa-file-o"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="Edit Soal">
-                            <i class="fa fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete Soal">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">5</td>
-                    <td class="font-w600">AKU MAKAN</td>
-                    <td class="d-none d-sm-table-cell">Tuliskan huruf A K U M A K A N</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-success">Level 4</span>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="View Soal">
-                            <i class="fa fa-file-o"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="Edit Soal">
-                            <i class="fa fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete Soal">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
