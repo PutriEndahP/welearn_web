@@ -19,10 +19,15 @@ class UserController extends Controller
         return view('user.user', $data);
     }
 
-    public function viewUser()
+    public function viewUser($id)
     {
-        $data['users'] = DB::table('users')->where('users.id',Auth::user()->id)
-                                            ->get();
+        // $data['users'] = DB::table('users')->where('users.id',Auth::user()->id)
+        //                                     ->get();
+        // $data['users'] = DB::table('users')->get();
+        // $users = users::find(id);
+        // $users = user::find($id);
+        $data['user'] = DB::table('users')->find($id);
         return view('user.view', $data);
+        // return view('user/view', compact('user'));
     }
 }

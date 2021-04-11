@@ -32,7 +32,7 @@ Auth::routes();
 Route::get('/user', [UserController::class,'showUser']);
 Auth::routes();
 
-Route::get('/view_user', [UserController::class,'viewUser']);
+Route::get('/view_user/{id}', [UserController::class,'viewUser']);
 Auth::routes();
 
 Route::get('/dashboard', [DashboardController::class,'showDashboard']);
