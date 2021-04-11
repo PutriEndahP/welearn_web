@@ -5,7 +5,7 @@
     <!-- Normal Form -->
     <div class="block">
         <div class="block-header bg-gd-lake">
-            <h3 class="block-title" style="color : white">Edit Soal Huruf</h3>
+            <h3 class="block-title" style="color : white">Edit Soal Huruf Coba</h3>
         </div>
         <div class="block-content">
             <form action="{{ url('soal_huruf/edit')}}" method="post" id="form">
