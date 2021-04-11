@@ -34,9 +34,14 @@
                                 <i class="fa fa-file-o"></i>
                             </button>
                         </a>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
+                        <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete User">
                             <i class="fa fa-trash"></i>
-                        </button>
+                        </button> -->
+                        <form action="{{ url('/hapus_user')}}" method="post" enctype="multipart/form-data" style="display:inline-block">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="hapus" value="{{ $user->id}}">
+                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

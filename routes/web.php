@@ -35,6 +35,10 @@ Auth::routes();
 Route::get('/view_user/{id}', [UserController::class,'viewUser']);
 Auth::routes();
 
+// Route::post('/hapus_user','UserController@delete');
+Route::post('/hapus_user',[UserController::class,'delete']);
+Auth::routes();
+
 Route::get('/dashboard', [DashboardController::class,'showDashboard']);
 Auth::routes();
 

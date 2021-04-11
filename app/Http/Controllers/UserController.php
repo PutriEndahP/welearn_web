@@ -30,4 +30,11 @@ class UserController extends Controller
         return view('user.view', $data);
         // return view('user/view', compact('user'));
     }
+
+    public function delete(Request $r)
+    {
+        DB::table('users')->where('id', $r->hapus)->delete();
+        return redirect('user');
+    }
+
 }
