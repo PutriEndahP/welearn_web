@@ -29,7 +29,7 @@
                         <span class="badge badge-primary">117</span>
                     </td>
                     <td class="text-center">
-                        <a href="{{url('view_user')}}">
+                        <a href="{{url('view_user/'.$user->id)}}">
                             <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">
                                 <i class="fa fa-file-o"></i>
                             </button>

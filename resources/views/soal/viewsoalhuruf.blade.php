@@ -5,8 +5,9 @@
     <!-- Normal Form -->
     <div class="block">
         <div class="block-header bg-gd-lake">
-            <h3 class="block-title" style="color : white">View Detail User</h3>
+            <h3 class="block-title" style="color : white">View Detail Soal Huruf Abjad</h3>
         </div>
+        @foreach($users as $key=>$user)
         <div class="block-content">
             <form action="be_forms_elements_bootstrap.html" method="post" onsubmit="return false;">
                 <div class="form-group">
@@ -46,6 +47,7 @@
                 </div>
             </form>
         </div>
+        @endforeach
     </div>
 </div>
 @endsection

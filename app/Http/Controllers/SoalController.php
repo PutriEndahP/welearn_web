@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Soal;
 use App\Models\JenisSoal;
 use App\Models\Level;
@@ -43,6 +44,13 @@ class SoalController extends Controller
     public function editSoalHuruf()
     {
         return view('soal.editsoalhuruf');
+    }
+    
+    public function viewSoalHuruf()
+    {
+        $data['soal'] = DB::table('soal')->where('soal.id_soal',Auth::user()->id)
+                                            ->get();
+        return view('user.viewsoalhuruf', $data);
     }
 
     public function showSoalAngka()
