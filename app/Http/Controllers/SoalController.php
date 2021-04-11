@@ -33,6 +33,7 @@ class SoalController extends Controller
         $newSoalHuruf->id_level = $request->id_level;
         $newSoalHuruf->soal = $request->soal;
         $newSoalHuruf->keterangan = $request->keterangan;
+        $newSoalHuruf->jawaban = $request->jawaban;
 
         $status = $newSoalHuruf->save();
         if($status)
@@ -53,7 +54,7 @@ class SoalController extends Controller
     public function postSoalHuruf(Request $request)
     {
         $status = DB::table('soal')->where('id_soal', $request->id)
-                                ->update(['id_jenis'=>$request->id_jenis,'id_level'=>$request->id_level,'soal'=>$request->soal,'keterangan'=>$request->keterangan]);
+                                ->update(['id_jenis'=>$request->id_jenis,'id_level'=>$request->id_level,'soal'=>$request->soal,'keterangan'=>$request->keterangan,'jawaban'=>$request->jawaban]);
         if($status)
         {
             return redirect('/soal_huruf'); // redirect ke /route nya

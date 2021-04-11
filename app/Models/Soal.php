@@ -17,6 +17,7 @@ class Soal extends Model
         'id_level',
         'soal',
         'keterangan',
+        'jawaban',
     ];
 
     public $timestamps = false;

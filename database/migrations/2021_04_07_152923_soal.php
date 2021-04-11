@@ -19,6 +19,7 @@ class Soal extends Migration
             $table->integer('id_level')->unique();
             $table->string('soal');
             $table->string('keterangan');
+            $table->string('jawaban');
         });
     }
 

@@ -45,7 +45,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <a href=""><button type="button" class="btn btn-alt-secondary">Cancel</button></a>
+                    <a href="{{url('soal_huruf')}}"><button type="button" class="btn btn-alt-secondary">Cancel</button></a>
                     <button type="submit" class="btn btn-alt-success" id="sweet">Simpan</button>
                 </div>
             </form>
