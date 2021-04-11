@@ -36,7 +36,7 @@
                                 <i class="fa fa-file-o"></i>
                             </button>
                         </a>
-                        <a href="{{url('/soal_huruf/edit')}}">
+                        <a href="{{url('/soal_huruf/edit/'.$soal->id_soal)}}">
                             <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="Edit Soal">
                                 <i class="fa fa-edit"></i>
                             </button>

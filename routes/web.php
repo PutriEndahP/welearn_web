@@ -47,8 +47,12 @@ Auth::routes();
 Route::post('/storeSoalHuruf', [SoalController::class,'storeSoalHuruf']);
 Auth::routes();
 
-Route::get('/soal_huruf/edit', [SoalController::class,'editSoalHuruf']);
+Route::get('/soal_huruf/edit/{id}', [SoalController::class,'editSoalHuruf']);
 Auth::routes();
+
+Route::post('/soal_huruf/edit', [SoalController::class,'postSoalHuruf']);
+Auth::routes();
+
 
 Route::get('/soal_angka', [SoalController::class,'showSoalAngka']);
 Auth::routes();
