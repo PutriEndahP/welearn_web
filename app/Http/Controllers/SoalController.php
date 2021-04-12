@@ -103,6 +103,12 @@ class SoalController extends Controller
         }
     }
 
+    public function viewSoalAngka($id)
+    {
+        $angka = DB::table('soal')->where('id_soal',$id)->first();
+        return view('soal.viewsoalangka', ['angka' => $angka]);
+    }
+
     // public function editSoalAngka($id)
     // {
     //     // return view('soal.editsoalhuruf');

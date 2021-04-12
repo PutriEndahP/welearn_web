@@ -66,6 +66,9 @@ Auth::routes();
 Route::post('/storeSoalAngka', [SoalController::class,'storeSoalAngka']);
 Auth::routes();
 
+Route::get('/view_soalangka/{id}', [SoalController::class,'viewSoalAngka']);
+Auth::routes();
+
 // Score
 Route::get('/score_huruf', [ScoreController::class,'showScoreHuruf']);
 Auth::routes();
