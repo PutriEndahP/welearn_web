@@ -15,8 +15,8 @@ class Score extends Migration
     {
         Schema::create('score', function (Blueprint $table) {
             $table->increments('id_score');
-            $table->integer('id_user')->unique();
-            $table->integer('id_soal')->unique();
+            $table->integer('id_user');
+            $table->integer('id_soal');
             $table->string('score');
             $table->dateTime('date_time');
         });
