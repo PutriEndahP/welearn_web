@@ -15,7 +15,8 @@ class SoalController extends Controller
 {
     public function showSoalHuruf()
     {
-        $data['soal'] = DB::table('soal')->where('id_jenis',2)->get();
+        $data['soal'] = DB::table('soal')->where('id_jenis',1)->get();
+        // $data['soal'] = DB::table('soal')->get();
         $data['level'] = DB::table('level')->get();
         return view('soal.soalhuruf', $data);
     }
@@ -68,8 +69,58 @@ class SoalController extends Controller
         return view('user.viewsoalhuruf', $data);
     }
 
+    // public function showSoalAngka()
+    // {
+    //     return view('soal.soalangka');
+    // }
+
     public function showSoalAngka()
     {
-        return view('soal.soalangka');
+        $data['soal'] = DB::table('soal')->where('id_jenis',2)->get();
+        $data['level'] = DB::table('level')->get();
+        return view('soal.soalangka', $data);
     }
+
+
+    public function storeSoalAngka(Request $request)
+    {
+        $newSoalAngka = new Soal();
+        $newSoalAngka->id_jenis = $request->id_jenis;
+        $newSoalAngka->id_level = $request->id_level;
+        $newSoalAngka->soal = $request->soal;
+        $newSoalAngka->keterangan = $request->keterangan;
+        $newSoalAngka->jawaban = $request->jawaban;
+
+        $status = $newSoalAngka->save();
+        if($status)
+        {
+            return redirect('/soal_angka'); // redirect ke /route nya
+        }
+    }
+
+    // public function editSoalAngka($id)
+    // {
+    //     // return view('soal.editsoalhuruf');
+    //     $huruf = DB::table('soal')->where('id_soal',$id)->first();
+    //     return view('soal.editsoalangka', ['angka' => $angka]);
+    //     // return view('soal.editsoalhuruf', compact($huruf);
+        
+    // }
+
+    // public function postSoalAngka(Request $request)
+    // {
+    //     $status = DB::table('soal')->where('id_soal', $request->id)
+    //                             ->update(['id_jenis'=>$request->id_jenis,'id_level'=>$request->id_level,'soal'=>$request->soal,'keterangan'=>$request->keterangan,'jawaban'=>$request->jawaban]);
+    //     if($status)
+    //     {
+    //         return redirect('/soal_angka'); // redirect ke /route nya
+    //     }
+    // }
+    
+    // public function viewSoalAngka()
+    // {
+    //     $data['soal'] = DB::table('soal')->where('soal.id_soal',Auth::user()->id)
+    //                                         ->get();
+    //     return view('user.viewsoalangka', $data);
+    // }
 }

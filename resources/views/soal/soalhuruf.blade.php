@@ -115,7 +115,7 @@
                             <input type="text" class="form-control" id="jawaban" name="jawaban" placeholder="Jawaban .." required> 
                         </div>
                     </div>
-                    <input type="hidden" id="id_jenis" name="id_jenis" value="2"> 
+                    <input type="hidden" id="id_jenis" name="id_jenis" value="1"> 
                 </div>   
             </div>
             <div class="modal-footer">
