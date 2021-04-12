@@ -62,11 +62,16 @@ class SoalController extends Controller
         }
     }
     
-    public function viewSoalHuruf()
+    public function viewSoalHuruf($id)
     {
-        $data['soal'] = DB::table('soal')->where('soal.id_soal',Auth::user()->id)
-                                            ->get();
-        return view('user.viewsoalhuruf', $data);
+        // $data['soal'] = DB::table('soal')->where('soal.id_soal',Auth::user()->id)
+        //                                     ->get();
+        // return view('user.viewsoalhuruf', $data);
+        // $data['soal'] = DB::table('soal')->find($id);
+        // $data['soal'] = DB::table('soal')->where('id_soal', $id)->get();
+        // return view('soal.viewsoalhuruf', $data);
+        $huruf = DB::table('soal')->where('id_soal',$id)->first();
+        return view('soal.viewsoalhuruf', ['huruf' => $huruf]);
     }
 
     // public function showSoalAngka()

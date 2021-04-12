@@ -31,7 +31,7 @@
                         <span class="badge badge-danger">Level {{$soal->id_level}}</span>
                     </td>
                     <td class="text-center">
-                        <a href="">
+                        <a href="{{url('view_soalhuruf/'.$soal->id_soal)}}">
                             <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="View Soal">
                                 <i class="fa fa-file-o"></i>
                             </button>
