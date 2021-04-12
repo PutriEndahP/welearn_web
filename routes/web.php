@@ -60,6 +60,9 @@ Auth::routes();
 Route::get('/view_soalhuruf/{id}', [SoalController::class,'viewSoalHuruf']);
 Auth::routes();
 
+Route::post('/hapus_soalhuruf',[SoalController::class,'deleteSoalHuruf']);
+Auth::routes();
+
 Route::get('/soal_angka', [SoalController::class,'showSoalAngka']);
 Auth::routes();
 

@@ -75,10 +75,11 @@ class SoalController extends Controller
         return view('soal.viewsoalhuruf', ['huruf' => $huruf]);
     }
 
-    // public function showSoalAngka()
-    // {
-    //     return view('soal.soalangka');
-    // }
+    public function deleteSoalHuruf(Request $request)
+    {
+        DB::table('soal')->where('id_soal', $request->hapus)->delete();
+        return redirect('/soal_huruf');
+    }
 
     // Soal Angka
     public function showSoalAngka()
@@ -129,29 +130,4 @@ class SoalController extends Controller
         }
     }
 
-    // public function editSoalAngka($id)
-    // {
-    //     // return view('soal.editsoalhuruf');
-    //     $huruf = DB::table('soal')->where('id_soal',$id)->first();
-    //     return view('soal.editsoalangka', ['angka' => $angka]);
-    //     // return view('soal.editsoalhuruf', compact($huruf);
-        
-    // }
-
-    // public function postSoalAngka(Request $request)
-    // {
-    //     $status = DB::table('soal')->where('id_soal', $request->id)
-    //                             ->update(['id_jenis'=>$request->id_jenis,'id_level'=>$request->id_level,'soal'=>$request->soal,'keterangan'=>$request->keterangan,'jawaban'=>$request->jawaban]);
-    //     if($status)
-    //     {
-    //         return redirect('/soal_angka'); // redirect ke /route nya
-    //     }
-    // }
-    
-    // public function viewSoalAngka()
-    // {
-    //     $data['soal'] = DB::table('soal')->where('soal.id_soal',Auth::user()->id)
-    //                                         ->get();
-    //     return view('user.viewsoalangka', $data);
-    // }
 }
