@@ -41,11 +41,11 @@
                                 <i class="fa fa-edit"></i>
                             </button>
                         </a>
-                        <a href="">
-                            <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete Soal">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </a>
+                        <form action="{{ url('/hapus_soalhuruf')}}" method="post" enctype="multipart/form-data" style="display:inline-block">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="hapus" value="{{ $soal->id_soal }}">
+                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
