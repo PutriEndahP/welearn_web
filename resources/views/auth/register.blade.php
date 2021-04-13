@@ -68,12 +68,23 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        
+                        <div class="form-group row">
+                            <label for="tanggal_lahir" class="col-md-4 col-form-label text-md-right">{{ __('Tanggal Lahir') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="tanggal_lahir" type="date" class="form-control" name="tanggal_lahir" required autocomplete="tanggal_lahir">
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="jenis_kelamin" class="col-md-4 col-form-label text-md-right">{{ __('Jenis Kelamin') }}</label>
 
                             <div class="col-md-6">
-                                <input id="jenis_kelamin" type="text" class="form-control" name="jenis_kelamin" required autocomplete="jenis_kelamin">
+                                <select class="form-control" name="jenis_kelamin">
+                                    <option value="L">Laki-Laki</option>
+                                    <option value="P">Perempuan</option>
+                                </select>
                             </div>
                         </div>
 

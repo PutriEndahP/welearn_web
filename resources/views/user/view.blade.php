@@ -29,8 +29,8 @@
                 </div>
                 <div class="form-group">
                     <label for="example-nf-email">Tanggal Lahir</label>
-                    <div class="col-md-9" style="padding: 0px">
-                        <input type="text" class="form-control" id="example-nf-email" name="example-nf-email" placeholder="20 Juli 1999">
+                    <div class="col-md-9" style="padding: 0px">{{$user->tanggal_lahir}}
+                        <!-- <input type="text" class="form-control" id="example-nf-email" name="example-nf-email" placeholder="20 Juli 1999"> -->
                     </div>
                 </div>
                 <div class="form-group">
