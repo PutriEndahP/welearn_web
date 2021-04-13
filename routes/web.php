@@ -78,6 +78,9 @@ Auth::routes();
 Route::post('/soal_angka/edit', [SoalController::class,'postSoalAngka']);
 Auth::routes();
 
+Route::post('/hapus_soalangka',[SoalController::class,'deleteSoalAngka']);
+Auth::routes();
+
 // Score
 Route::get('/score_huruf', [ScoreController::class,'showScoreHuruf']);
 Auth::routes();

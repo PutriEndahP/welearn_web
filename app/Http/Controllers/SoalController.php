@@ -119,6 +119,12 @@ class SoalController extends Controller
         // return view('soal.editsoalhuruf', compact($huruf);
         
     }
+    
+    public function deleteSoalAngka(Request $request)
+    {
+        DB::table('soal')->where('id_soal', $request->hapus)->delete();
+        return redirect('/soal_angka');
+    }
 
     public function postSoalAngka(Request $request)
     {
