@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SoalController;
 use App\Http\Controllers\ScoreController;
+use App\Http\Controllers\GambarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,6 +87,13 @@ Route::get('/score_huruf', [ScoreController::class,'showScoreHuruf']);
 Auth::routes();
 
 Route::get('/score_angka', [ScoreController::class,'showScoreAngka']);
+Auth::routes();
+
+// konversi gambar
+Route::get('/konversi_gambar', [GambarController::class,'viewGambar']);
+Auth::routes();
+
+Route::post('/konversi_gambar/upload', [GambarController::class,'uploadGambar'])->name('upload_gambar');
 Auth::routes();
 
 

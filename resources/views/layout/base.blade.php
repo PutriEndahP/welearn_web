@@ -496,6 +496,9 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="{{url('konversi_gambar')}}" ><i class="fa fa-bar-chart"></i><span class="sidebar-mini-hide">Konversi Gambar</span></a>
+                            </li>
                         </ul>
                     </div>
                     <!-- END Side Navigation -->

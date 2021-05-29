@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Soal;
 use App\Models\JenisSoal;
 use App\Models\Level;
+use App\Models\Gambar;
 
 use DB;
 
@@ -135,5 +136,7 @@ class SoalController extends Controller
             return redirect('/soal_angka'); // redirect ke /route nya
         }
     }
+
+    
 
 }
