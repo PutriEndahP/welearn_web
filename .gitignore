@@ -11,3 +11,5 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+/public/all_huruf.gzip
+/public/modelTR_Huruf.pkl
