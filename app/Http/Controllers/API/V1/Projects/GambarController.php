@@ -7,6 +7,7 @@ use App\Models\File;
 use FilesystemIterator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class GambarController extends Controller
 {
@@ -100,5 +101,13 @@ class GambarController extends Controller
 
         return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
 
+    }
+
+    public function getSoalAngka()
+    {
+        $data['soal'] = DB::table('soal')->where('id_jenis',2)->get();
+        $data['level'] = DB::table('level')->get();
+        // return view('soal.soalhuruf', $data);
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$data], 200);
     }
 }
