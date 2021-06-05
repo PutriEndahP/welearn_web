@@ -30,10 +30,11 @@ Route::group(['middleware' => 'auth:api'], function(){
 	Route::get('logout', 'App\Http\Controllers\API\V1\Globals\UserController@logout');
 
     /**
-     * gambar
+     * gambar dan soal
      */
 	Route::get('train', 'App\Http\Controllers\API\V1\Projects\GambarController@trainHuruf');
-	Route::get('soalAngka', 'App\Http\Controllers\API\V1\Projects\GambarController@getSoalAngka');
+	Route::get('soalAngka/{id}', 'App\Http\Controllers\API\V1\Projects\GambarController@getSoalAngka');
+	Route::get('soalHuruf/{id}', 'App\Http\Controllers\API\V1\Projects\GambarController@getSoalHuruf');
 	Route::post('predict', 'App\Http\Controllers\API\V1\Projects\GambarController@predict');
 
 });

@@ -103,11 +103,19 @@ class GambarController extends Controller
 
     }
 
-    public function getSoalAngka()
+    public function getSoalAngka(string $level)
     {
-        $data['soal'] = DB::table('soal')->where('id_jenis',2)->get();
-        $data['level'] = DB::table('level')->get();
+        $data['soal'] = DB::table('soal')->where('id_level',$level)->where('id_jenis', '2')->get();
+        $res= $data['soal'][rand(0, count($data['soal']) - 1)];
         // return view('soal.soalhuruf', $data);
-        return response()->json(['success'=>config('global.http.200'), 'message'=>$data], 200);
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$res], 200);
+    }
+
+    public function getSoalHuruf(string $level)
+    {
+        $data['soal'] = DB::table('soal')->where('id_level',$level)->where('id_jenis', '1')->get();
+        $res= $data['soal'][rand(0, count($data['soal']) - 1)];
+        // return view('soal.soalhuruf', $data);
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$res], 200);
     }
 }
