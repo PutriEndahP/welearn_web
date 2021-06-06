@@ -16,7 +16,7 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function login(){
-        if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
+        if(Auth::attempt(['username' => request('username'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('WeLearn')->accessToken;
             return response()->json(['success'=>config('global.http.200'), 'message'=>$success], 200);
