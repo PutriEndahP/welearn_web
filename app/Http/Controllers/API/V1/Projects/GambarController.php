@@ -96,10 +96,17 @@ class GambarController extends Controller
 
         $output= implode('',$output);
         $text = preg_replace("/\r|\n/", "", $output);
+        $soal = DB::table('soal')->where('id_soal', $idSoal)->first();
+        if ($soal->jawaban == $text) {
+            $answer = "Benar";
+        }
+        else {
+            $answer = "Salah";
+        }
         // $output= implode('<br>',$output);
         // $msg= 'Data Your files has been successfully added, python : '.$output;
 
-        return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$answer], 200);
 
     }
 
