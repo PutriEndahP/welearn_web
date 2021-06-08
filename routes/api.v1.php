@@ -36,5 +36,6 @@ Route::group(['middleware' => 'auth:api'], function(){
 	Route::get('soalAngka/{id}', 'App\Http\Controllers\API\V1\Projects\GambarController@getSoalAngka');
 	Route::get('soalHuruf/{id}', 'App\Http\Controllers\API\V1\Projects\GambarController@getSoalHuruf');
 	Route::post('predict', 'App\Http\Controllers\API\V1\Projects\GambarController@predict');
+    Route::get('randHuruf/{id}', 'App\Http\Controllers\API\V1\Projects\GambarController@getRandHuruf');
 
 });

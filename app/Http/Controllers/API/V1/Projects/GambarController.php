@@ -118,4 +118,32 @@ class GambarController extends Controller
         // return view('soal.soalhuruf', $data);
         return response()->json(['success'=>config('global.http.200'), 'message'=>$res], 200);
     }
+
+    public function getRandHuruf(string $level, $n = 1)
+    {
+        $lv = (int)$level;
+        if($lv > 0 && $lv <= 4){
+            $data['soal'] = DB::table('soal')->where('id_level', $level)->where('id_jenis', '1')->get();
+            $soal = $data['soal'];
+            $jumlah = count($data['soal']);
+
+            for($i = $jumlah - 1; $i >=0; $i--)
+            {
+                $j = rand(0, $i);
+
+                $tmp = $soal[$i];
+                $soal[$i] = $soal[$j];
+                $soal[$j] = $tmp;
+            }
+            for($i = 0; $i <= $n; $i++)
+            $ret[$i] = $soal[$i];
+            return response()->json(['success'=>config('global.http.200'), 'message'=>$ret], 200);
+        }
+
+        else{
+            return response()->json(['error'=>config('global.http.404'), 'message'=>'Level melebihi batas maksimal'], 404);
+        }
+        
+    }
+
 }

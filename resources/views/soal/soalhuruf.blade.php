@@ -2,6 +2,12 @@
 
 @section('content')
 <!-- Dynamic Table Full -->
+<style>
+label {
+    display : inline-flex;
+    margin-bottom : 15px;
+}
+</style>
 <div class="block">
     <div class="block-header block-header-default">
         <h3 class="block-title">Data Soal Huruf Abjad</h3>
@@ -19,7 +25,6 @@
                     <th class="text-center" style="width: 15%;">Action</th>
                 </tr>
             </thead>
-            <tbody>
             <tbody>
             <?php $i=0; ?>
             @foreach($soal as $key=>$soal)

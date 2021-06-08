@@ -2,6 +2,12 @@
 
 @section('content')
 <!-- Dynamic Table Full -->
+<style>
+label {
+    display : inline-flex;
+    margin-bottom : 15px;
+}
+</style>
 <div class="block">
     <div class="block-header block-header-default">
         <h3 class="block-title">Data User Welearn</h3>
@@ -11,7 +17,7 @@
         <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
             <thead>
                 <tr>
-                    <th class="text-center"></th>
+                    <th class="text-center" style="width: 5%;"></th>
                     <th>Nama</th>
                     <th class="d-none d-sm-table-cell">Email</th>
                     <th class="d-none d-sm-table-cell" style="width: 15%;">Score</th>
