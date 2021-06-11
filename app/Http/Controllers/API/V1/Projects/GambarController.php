@@ -83,12 +83,14 @@ class GambarController extends Controller
 
             unset($command);
             if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-                $modelFile= public_path()."\\modelTR_Huruf.pkl";
+                $modelFile= public_path()."\\modelCNN_fold_1.h5";
+                $mapFile= public_path()."\\map.npz";
                 // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
-                $command = escapeshellcmd("python ".public_path()."\\code\\doPredictHuruf.py ".$fullName." ".$modelFile);
+                $command = escapeshellcmd("python ".public_path()."\\code\\predictCNN.py ".$fullName." ".$mapFile." ".$modelFile);
             } else {
-                $modelFile= public_path()."/modelTR_Huruf.pkl";
-                $command = escapeshellcmd("python ".public_path()."/doPredictHuruf.py ".$fullName." ".$modelFile);
+                $modelFile= public_path()."/modelCNN_fold_1.h5";
+                $mapFile= public_path()."/map.npz";
+                $command = escapeshellcmd("python ".public_path()."/predictCNN.py ".$fullName." ".$mapFile." ".$modelFile);
             }
             // die($command);
             $output[] = shell_exec($command);
@@ -96,6 +98,7 @@ class GambarController extends Controller
 
         $output= implode('',$output);
         $text = preg_replace("/\r|\n/", "", $output);
+
         $soal = DB::table('soal')->where('id_soal', $idSoal)->first();
         if ($soal->jawaban == $text) {
             $answer = "Benar";
@@ -103,8 +106,12 @@ class GambarController extends Controller
         else {
             $answer = "Salah";
         }
+
+
         // $output= implode('<br>',$output);
         // $msg= 'Data Your files has been successfully added, python : '.$output;
+
+        // return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
 
         return response()->json(['success'=>config('global.http.200'), 'message'=>$answer], 200);
 
