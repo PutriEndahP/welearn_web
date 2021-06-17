@@ -37,5 +37,13 @@ Route::group(['middleware' => 'auth:api'], function(){
 	Route::get('soalHuruf/{id}', 'App\Http\Controllers\API\V1\Projects\GambarController@getSoalHuruf');
 	Route::post('predict', 'App\Http\Controllers\API\V1\Projects\GambarController@predict');
     Route::get('randHuruf/{id}', 'App\Http\Controllers\API\V1\Projects\GambarController@getRandHuruf');
+    Route::get('randAngka/{id}', 'App\Http\Controllers\API\V1\Projects\GambarController@getRandAngka');
 
+    Route::post('scoreHuruf', 'App\Http\Controllers\API\V1\Projects\GambarController@scoreHuruf');
+    Route::get('scoreHurufUser', 'App\Http\Controllers\API\V1\Projects\GambarController@scoreHurufUser');
+    Route::get('scoreAngkaUser', 'App\Http\Controllers\API\V1\Projects\GambarController@scoreAngkaUser');
+
+    // Score tertinggi huruf dan angka
+    Route::get('scoreTHuruf', 'App\Http\Controllers\API\V1\Projects\GambarController@scoreTHuruf');
+    Route::get('scoreTAngka', 'App\Http\Controllers\API\V1\Projects\GambarController@scoreTAngka');
 });

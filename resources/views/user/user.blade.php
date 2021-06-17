@@ -20,7 +20,7 @@ label {
                     <th class="text-center" style="width: 5%;"></th>
                     <th>Nama</th>
                     <th class="d-none d-sm-table-cell">Email</th>
-                    <th class="d-none d-sm-table-cell" style="width: 15%;">Score</th>
+                    <th class="d-none d-sm-table-cell" style="width: 20%;">Jenis Kelamin</th>
                     <th class="text-center" style="width: 15%;">Action</th>
                 </tr>
             </thead>
@@ -31,9 +31,7 @@ label {
                     <td class="text-center">{{++$i}}</td>
                     <td class="font-w600">{{$user->name}}</td>
                     <td class="d-none d-sm-table-cell">{{$user->email}}</td>
-                    <td class="d-none d-sm-table-cell">
-                        <span class="badge badge-primary">117</span>
-                    </td>
+                    <td class="d-none d-sm-table-cell">{{$user->jenis_kelamin}}</td>
                     <td class="text-center">
                         <a href="{{url('view_user/'.$user->id)}}">
                             <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="View User">

@@ -18,7 +18,7 @@ label {
         <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
             <thead>
                 <tr>
-                    <th class="text-center"></th>
+                    <th class="text-center" style="width: 5%;"></th>
                     <th>Soal</th>
                     <th class="d-none d-sm-table-cell">Keterangan</th>
                     <th class="d-none d-sm-table-cell" style="width: 15%;">Level</th>

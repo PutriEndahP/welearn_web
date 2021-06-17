@@ -82,8 +82,8 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" name="jenis_kelamin">
-                                    <option value="L">Laki-Laki</option>
-                                    <option value="P">Perempuan</option>
+                                    <option value="Laki-laki">Laki-Laki</option>
+                                    <option value="Perempuan">Perempuan</option>
                                 </select>
                             </div>
                         </div>

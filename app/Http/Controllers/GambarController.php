@@ -24,18 +24,6 @@ class GambarController extends Controller
 
         //menyimpan data gambar ke variabel $gambar
         $gambar = $request->file('gambar');
-
-        // echo 'Nama Gambar : '.$gambar->getClientOriginalName();
-        // echo '<br>';
-
-        // echo 'Path : '.$gambar->getRealPath();
-        // echo '<br>';
-
-        // echo 'Ukuran file : '.$gambar->getSize();
-        // echo '<br>';
-        // die();
-
-        //folder tempat gambar diupload
         
         $nama_gambar = time()."_".$gambar->getClientOriginalName();
 
