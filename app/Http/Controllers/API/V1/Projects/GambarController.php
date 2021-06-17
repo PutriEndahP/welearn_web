@@ -39,6 +39,7 @@ class GambarController extends Controller
 
     public function predict(Request $req)
     {
+        ini_set('max_execution_time','300');
         $user = Auth::user();
         $input= $req->all();
         $idSoal= $input['id_soal'];
@@ -99,21 +100,21 @@ class GambarController extends Controller
         $output= implode('',$output);
         $text = preg_replace("/\r|\n/", "", $output);
 
-        $soal = DB::table('soal')->where('id_soal', $idSoal)->first();
-        if ($soal->jawaban == $text) {
-            $answer = "Benar";
-        }
-        else {
-            $answer = "Salah";
-        }
+        // $soal = DB::table('soal')->where('id_soal', $idSoal)->first();
+        // if ($soal->jawaban == $text) {
+        //     $answer = "Benar";
+        // }
+        // else {
+        //     $answer = "Salah";
+        // }
 
 
         // $output= implode('<br>',$output);
         // $msg= 'Data Your files has been successfully added, python : '.$output;
 
-        // return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
 
-        return response()->json(['success'=>config('global.http.200'), 'message'=>$answer], 200);
+        // return response()->json(['success'=>config('global.http.200'), 'message'=>$answer], 200);
 
     }
 
