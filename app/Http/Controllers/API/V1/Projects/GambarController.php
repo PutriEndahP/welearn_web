@@ -39,7 +39,7 @@ class GambarController extends Controller
 
     public function predict(Request $req)
     {
-        ini_set('max_execution_time','300');
+        ini_set('max_execution_time','300'); // untuk mengatur maksimal waktu ekseskusi
         $user = Auth::user();
         $input= $req->all();
         $idSoal= $input['id_soal'];
