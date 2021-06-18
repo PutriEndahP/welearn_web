@@ -39,6 +39,7 @@ class GambarController extends Controller
 
     public function predict(Request $req)
     {
+        ini_set('max_execution_time','300');
         $user = Auth::user();
         $input= $req->all();
         $idSoal= $input['id_soal'];
@@ -89,6 +90,84 @@ class GambarController extends Controller
             } else {
                 $modelFile= public_path()."/modelTR_Huruf.pkl";
                 $command = escapeshellcmd("python ".public_path()."/doPredictHuruf.py ".$fullName." ".$modelFile);
+            }
+            // die($command);
+            $output[] = shell_exec($command);
+        }
+
+        $output= implode('',$output);
+        $text = preg_replace("/\r|\n/", "", $output);
+
+        // $soal = DB::table('soal')->where('id_soal', $idSoal)->first();
+        // if ($soal->jawaban == $text) {
+        //     $answer = "Benar";
+        // }
+        // else {
+        //     $answer = "Salah";
+        // }
+
+        // $output= implode('<br>',$output);
+        // $msg= 'Data Your files has been successfully added, python : '.$output;
+
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
+
+        // return response()->json(['success'=>config('global.http.200'), 'message'=>$answer], 200);
+
+
+    }
+
+    public function predictaksara(Request $req)
+    {
+        $user = Auth::user();
+        $input= $req->all();
+        $idSoal= $input['id_soal'];
+        $data= (array) $input['img'];
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            $folder = env('uploadAksara').'\\'.$user->id;
+        } else {
+            $folder = env('uploadAksara').'/'.$user->id;
+        }
+        
+        if (!file_exists($folder)) {
+            if (!mkdir($folder, 0777, true)) {
+                $m = array('msg' => "REJECTED, cant create folder");
+                echo json_encode($m);
+                return;
+            }
+        }
+
+        $output= array();
+        foreach ($data as $key => $d){
+            if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                $fullName = $folder."\\X_".$key."_". date("YmdHis") .".png"; // windows pake \\
+            } else {
+                $fullName = $folder."/X_".$key."_". date("YmdHis") .".png"; // linux pake /
+            }
+            $ifp = fopen($fullName, "wb");
+            fwrite($ifp, base64_decode($d));
+            fclose($ifp);
+            if (!$ifp) {
+                $m = array('masg' => "REJECTED, ".$fullName."not saved" );
+                echo json_encode($m);
+                return;
+            }
+            if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
+                $command = escapeshellcmd("python ".public_path()."\\code\\checkFile.py ".$fullName);
+            } else {
+                $command = escapeshellcmd("python ".public_path()."/checkFile.py ".$fullName);
+            }
+            // die($command);
+            shell_exec($command);
+
+            unset($command);
+            if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                $modelFile= public_path()."\\modelTR_Auruf.pkl";
+                // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
+                $command = escapeshellcmd("python ".public_path()."\\code\\doPredictAksara.py ".$fullName." ".$modelFile);
+            } else {
+                $modelFile= public_path()."/modelTR_Aksara.pkl";
+                $command = escapeshellcmd("python ".public_path()."/doPredictAksara.py ".$fullName." ".$modelFile);
             }
             // die($command);
             $output[] = shell_exec($command);
