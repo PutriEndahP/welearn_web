@@ -46,7 +46,7 @@ class HomeController extends Controller
         // ->first();
         // ->get(max(['score.id_user']));
 
-        // $maxAngka['ada']= DB::table('score')->join('soal', 'score.id_soal', '=', 'soal.id_soal')
+        // $maxAngka['maxAngka']= DB::table('score')->join('soal', 'score.id_soal', '=', 'soal.id_soal')
         // ->select(DB::raw('sum(score.score) as total_score'))
         // ->where('soal.id_jenis', 2)
         // ->groupBy('score.id_user')
@@ -54,8 +54,8 @@ class HomeController extends Controller
         // ->first();
         // ->get(max(['score.id_user']));
 
-        // return view('home.home', $data, $maxHuruf);
-        print_r($maxHuruf);die();
+        return view('home.home', $data, $maxHuruf);
+        // print_r($maxHuruf);die();
         // print_r($maxHuruf['maxHuruf'][0]->total_score);die;
         // echo '<pre>';print_r($maxHuruf);echo '</pre>';die();
         // print_r($maxHuruf['maxHuruf']['*items'][0]->total_score);die();

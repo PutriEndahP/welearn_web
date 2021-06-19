@@ -198,7 +198,7 @@ class GambarController extends Controller
         return response()->json(['success'=>config('global.http.200'), 'message'=>$res], 200);
     }
 
-    public function getRandHuruf(string $level, $n = 1)
+    public function getRandHuruf(string $level, $n = 3)
     {
         $awal = microtime(true);
         $lv = (int)$level;

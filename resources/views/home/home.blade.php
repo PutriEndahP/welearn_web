@@ -31,7 +31,7 @@
                     <div class="mb-5">
                         <i class="fa fa-trophy fa-4x text-success-light"></i>
                     </div>
-                    <div class="font-size-h1 font-w1000 text-white">{{$maxHuruf->items[0]->total_score}}</div>
+                    <div class="font-size-h1 font-w1000 text-white">{{$maxHuruf}}</div>
                     <div class="font-size-h5 font-w1000 text-white">Score tertinggi soal huruf</div>
                     <div class="pt-20">
                         <a class="btn btn-rounded btn-alt-success" href="{{url('score_huruf')}}">
