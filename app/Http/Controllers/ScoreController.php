@@ -12,6 +12,7 @@ class ScoreController extends Controller
 {
     public function showScoreHuruf()
     {
+        $data['scoreHuruf'] = DB::table('score')->get();
         return view('score.scorehuruf');
     }
 

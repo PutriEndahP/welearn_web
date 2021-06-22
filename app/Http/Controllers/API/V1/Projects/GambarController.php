@@ -108,17 +108,21 @@ class GambarController extends Controller
             // die($command);
             shell_exec($command);
 
-            unset($command);
-            if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-                $modelFile= public_path()."\\modelTR_Huruf.pkl";
-                // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
-                $command = escapeshellcmd("python ".public_path()."\\code\\doPredictHuruf.py ".$fullName." ".$modelFile);
-            } else {
-                $modelFile= public_path()."/modelTR_Huruf.pkl";
-                $command = escapeshellcmd("python ".public_path()."/doPredictHuruf.py ".$fullName." ".$modelFile);
-            }
-            // die($command);
-            $output[] = shell_exec($command);
+            // unset($command);
+            // if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            //     $modelFile= public_path()."\\modelCNN_fold_1.h5";
+            //     $mapFile= public_path()."\\map.npz";
+            //     // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
+            //     $command = escapeshellcmd("python ".public_path()."\\code\\predictCNN.py ".$fullName." ".$mapFile." ".$modelFile);
+            // } else {
+            //     $modelFile= public_path()."/modelCNN_fold_1.h5";
+            //     $mapFile= public_path()."/map.npz";
+            //     $command = escapeshellcmd("python ".public_path()."/predictCNN.py ".$fullName." ".$mapFile." ".$modelFile);
+            // }
+            // // die($command);
+            // $output[] = shell_exec($command);
+
+            $output[] = file_get_contents("http://127.0.0.1:5000/predictCNN?file=".$fullName."");
         }
 
         $output= implode('',$output);
