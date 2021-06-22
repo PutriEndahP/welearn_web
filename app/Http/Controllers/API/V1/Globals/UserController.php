@@ -33,13 +33,14 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function register(Request $request) {
+        ini_set('max_execution_time','300');
         // dd($request->all());
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required',
             'username' => 'required',
-            'tanggal_lahir' => 'required',
+            // 'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             // 'c_password' => 'required|same:password',
         ]);
