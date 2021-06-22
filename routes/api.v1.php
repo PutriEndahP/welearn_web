@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('predictaksara', 'App\Http\Controllers\API\V1\Projects\GambarController@predictaksara');
     Route::get('randHuruf/{id}', 'App\Http\Controllers\API\V1\Projects\GambarController@getRandHuruf');
     Route::get('randAngka/{id}', 'App\Http\Controllers\API\V1\Projects\GambarController@getRandAngka');
-
+    Route::post('predictangka', 'App\Http\Controllers\API\V1\Projects\GambarController@predictAngka');
     Route::post('scoreHuruf', 'App\Http\Controllers\API\V1\Projects\GambarController@scoreHuruf');
     Route::get('scoreHurufUser', 'App\Http\Controllers\API\V1\Projects\GambarController@scoreHurufUser');
     Route::get('scoreAngkaUser', 'App\Http\Controllers\API\V1\Projects\GambarController@scoreAngkaUser');

@@ -37,6 +37,32 @@ class GambarController extends Controller
         return response()->json(['success'=>config('global.http.200'), 'message'=>$output], 200);
     }
 
+    public function trainAngka()
+    {
+        ini_set('max_execution_time','1800');
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            if(file_exists(public_path()."\\all_angka.gzip")){
+                unlink(public_path()."\\all_angka.gzip");
+            }
+            if(file_exists(public_path()."\\modelTR_Angka.pkl")){
+                unlink(public_path()."\\modelTR_Angka.pkl");
+            }
+            $command = escapeshellcmd("python ".public_path()."\\code\\doTrainAngkaBaru.py");
+        } else {
+            if(file_exists(public_path()."/all_angka.gzip")){
+                unlink(public_path()."/all_angka.gzip");
+            }
+            if(file_exists(public_path()."/modelTR_Angka.pkl")){
+                unlink(public_path()."/modelTR_Angka.pkl");
+            }
+            $command = escapeshellcmd("python ".public_path()."/code/doTrainAngkaBaru.py");
+        }
+        // die($command);
+        // echo "<pre>".shell_exec($command)."</pre>";
+        $output[] = shell_exec($command);
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$output], 200);
+    }
+
     public function predict(Request $req)
     {
         ini_set('max_execution_time','300');
@@ -90,6 +116,85 @@ class GambarController extends Controller
             } else {
                 $modelFile= public_path()."/modelTR_Huruf.pkl";
                 $command = escapeshellcmd("python ".public_path()."/doPredictHuruf.py ".$fullName." ".$modelFile);
+            }
+            // die($command);
+            $output[] = shell_exec($command);
+        }
+
+        $output= implode('',$output);
+        $text = preg_replace("/\r|\n/", "", $output);
+
+        // $soal = DB::table('soal')->where('id_soal', $idSoal)->first();
+        // if ($soal->jawaban == $text) {
+        //     $answer = "Benar";
+        // }
+        // else {
+        //     $answer = "Salah";
+        // }
+
+        // $output= implode('<br>',$output);
+        // $msg= 'Data Your files has been successfully added, python : '.$output;
+
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
+
+        // return response()->json(['success'=>config('global.http.200'), 'message'=>$answer], 200);
+
+
+    }
+
+    public function predictAngka(Request $req)
+    {
+        ini_set('max_execution_time','300');
+        $user = Auth::user();
+        $input= $req->all();
+        $idSoal= $input['id_soal'];
+        $data= (array) $input['img'];
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            $folder = env('HasilAngka').'\\'.$user->id;
+        } else {
+            $folder = env('HasilAngka').'/'.$user->id;
+        }
+        
+        if (!file_exists($folder)) {
+            if (!mkdir($folder, 0777, true)) {
+                $m = array('msg' => "REJECTED, cant create folder");
+                echo json_encode($m);
+                return;
+            }
+        }
+
+        $output= array();
+        foreach ($data as $key => $d){
+            if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                $fullName = $folder."\\X_".$key."_". date("YmdHis") .".png"; // windows pake \\
+            } else {
+                $fullName = $folder."/X_".$key."_". date("YmdHis") .".png"; // linux pake /
+            }
+            $ifp = fopen($fullName, "wb");
+            fwrite($ifp, base64_decode($d));
+            fclose($ifp);
+            if (!$ifp) {
+                $m = array('masg' => "REJECTED, ".$fullName."not saved" );
+                echo json_encode($m);
+                return;
+            }
+            if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
+                $command = escapeshellcmd("python ".public_path()."\\code\\checkAngka.py ".$fullName);
+            } else {
+                $command = escapeshellcmd("python ".public_path()."/checkAngka.py ".$fullName);
+            }
+            // die($command);
+            shell_exec($command);
+
+            unset($command);
+            if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                $modelFile= public_path()."\\predictCNN_fold_1Angka.h5";
+                // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
+                $command = escapeshellcmd("python ".public_path()."\\code\\predictCNNAngka.py ".$fullName." ".$modelFile);
+            } else {
+                $modelFile= public_path()."/predictCNN_fold_1Angka.h5";
+                $command = escapeshellcmd("python ".public_path()."/predictCNNAngka.py ".$fullName." ".$modelFile);
             }
             // die($command);
             $output[] = shell_exec($command);
@@ -181,6 +286,7 @@ class GambarController extends Controller
         return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
 
     }
+
 
     public function getSoalAngka(string $level)
     {
