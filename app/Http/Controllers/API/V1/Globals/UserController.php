@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
+use DB;
 
 class UserController extends Controller {
     
@@ -79,7 +80,13 @@ class UserController extends Controller {
      */
     public function detail() {
         $user = Auth::user();
-        return response()->json(['success'=>config('global.http.200'), 'message'=>$user], 200);
+        $scoreHuruf['score'] = DB::table('score')->join('soal', 'score.id_soal', '=', 'soal.id_soal')->where('soal.id_jenis', 1)
+        ->where('score.id_user', $user->id)->sum('score.score');
+        $scoreAngka['score'] = DB::table('score')->join('soal', 'score.id_soal', '=', 'soal.id_soal')->where('soal.id_jenis', 2)
+        ->where('score.id_user', $user->id)->sum('score.score');
+        // return response()->json(['success'=>config('global.http.200'), 'message'=>$user], 200);
+        return response()->json(['success'=>config('global.http.200'), 'message'=>['username'=>$user->username, 'email'=>$user->email, 'jenis_kelamin'=>$user->jenis_kelamin, 'score'=>$scoreHuruf['score'], 'angka'=>$scoreAngka['score']]], 200);
     }
 
+    
 }

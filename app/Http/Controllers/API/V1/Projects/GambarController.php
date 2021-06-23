@@ -297,11 +297,11 @@ class GambarController extends Controller
         return response()->json(['success'=>config('global.http.200'), 'message'=>$res], 200);
     }
 
-    public function getRandHuruf(string $level, $n = 3)
+    public function getRandHuruf(string $level, $n = 9)
     {
         $awal = microtime(true);
         $lv = (int)$level;
-        if($lv > 0 && $lv <= 4){
+        if($lv >= 0 && $lv <= 4){
             $data['soal'] = DB::table('soal')->where('id_level', $level)->where('id_jenis', '1')->get();
             $soal = $data['soal'];
             $jumlah = count($data['soal']);
@@ -327,7 +327,7 @@ class GambarController extends Controller
         
     }
 
-    public function getRandAngka(string $level, $n = 1)
+    public function getRandAngka(string $level, $n = 9)
     {
         $awal = microtime(true);
         $lv = (int)$level;
@@ -395,7 +395,7 @@ class GambarController extends Controller
         ->orderBy('score.score', 'DESC')->get();
 
         // $data['score'] = DB::table('score')->get();
-        return response()->json(['success'=>config('global.http.200'), 'message'=>$data], 200);
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$data['score']], 200);
     }
 
     public function scoreTAngka()
@@ -409,7 +409,7 @@ class GambarController extends Controller
         ->orderBy('score.score', 'DESC')->get();
 
         // $data['score'] = DB::table('score')->get();
-        return response()->json(['success'=>config('global.http.200'), 'message'=>$data], 200);
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$data['score']], 200);
     }
 
 }
