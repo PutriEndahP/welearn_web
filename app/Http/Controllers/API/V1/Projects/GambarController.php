@@ -227,7 +227,7 @@ class GambarController extends Controller
 
     // }
 
-    public function predictAngka(Request $req)
+    public function predictangka(Request $req)
     {
         ini_set('max_execution_time','300');
         $user = Auth::user();
@@ -235,9 +235,9 @@ class GambarController extends Controller
         $idSoal= $input['id_soal'];
         $data= (array) $input['img'];
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-            $folder = env('UploadAngka').'\\'.$user->id;
+            $folder = env('uploadAngka').'\\'.$user->id;
         } else {
-            $folder = env('UploadAngka').'/'.$user->id;
+            $folder = env('uploadAngka').'/'.$user->id;
         }
         
         if (!file_exists($folder)) {
@@ -275,12 +275,12 @@ class GambarController extends Controller
             unset($command);
             if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
                 $modelFile= public_path()."\\modelCNN_fold_1Angka.h5";
-                $mapFile= public_path()."\\map.npz";
+                $mapFile= public_path()."\\maps.npz";
                 // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
                 $command = escapeshellcmd("python ".public_path()."\\code\\predictCNNAngka.py ".$fullName." ".$mapFile." ".$modelFile);
             } else {
                 $modelFile= public_path()."/modelCNN_fold_1Angka.h5";
-                $mapFile= public_path()."/map.npz";
+                $mapFile= public_path()."/maps.npz";
                 $command = escapeshellcmd("python ".public_path()."/predictCNNAngka.py ".$fullName." ".$mapFile." ".$modelFile);
             }
             // die($command);
