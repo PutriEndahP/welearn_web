@@ -48,7 +48,7 @@ if __name__ == '__main__':
         print("Create data ...%s" %FILE_ZIP)    
         ModelmobileNet = createMobileNet()
         # path = "D:\TA\TA_Welearn\TA_PutriEndah\\dataset"
-        path = "C:\\xampp\\htdocs\\laravelFileUpload\\public\\dataset"            
+        path = "C:\\xampp\\htdocs\\welearn_web\\public\dataset"            
         df    = pd.concat((LoadImage(path,huruf,ModelmobileNet) for huruf in os.listdir(path)))        
         print("Saving ... %s"%FILE_ZIP)        
         df.to_pickle(FILE_ZIP)        
