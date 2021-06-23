@@ -67,20 +67,21 @@ def load_image(img_path, img_size) :
 
 
 if __name__ == "__main__":        
-    # nmFile ='C:\\xampp\\htdocs\\welearn_web\\public\\uploadAngka\\11\\X_0_20210623082243.png'
-    nmFile =sys.argv[1]
-    mapClass = sys.argv[2]
-    # mapClass = 'map.npz'
+    nmFile ='C:\\xampp\\htdocs\\welearn_web\\public\\uploadAngka\\11\\X_0_20210623082243.png'
+    # nmFile =sys.argv[1]
+    # mapClass = sys.argv[2]
+    mapClass = 'maps.npz'
     if os.path.exists(mapClass):             
         loaded = np.load(mapClass)
         mapAngka  = loaded['mapAngka']
 
+    
     img_size = 224
     bntk_input = (img_size, img_size, 3)
     kelas=len(mapAngka)
     fold_no=2
-    nmModel = (sys.argv[3]) # kalo error sys.argv[3] dikasih quote
-    # nmModel  = ('modelCNN_fold_1Angka.h5')
+    # nmM1odel = (sys.argv[3]) # kalo error sys.argv[3] dikasih quote
+    nmModel  = ('modelCNN_fold_1Angka.h5')
     # nmModel  = 'mobileNetCNN_097.h5'#-> model_save   
     model = mobileNetCNN(bntk_input,kelas) 
     if os.path.exists(nmModel):             
