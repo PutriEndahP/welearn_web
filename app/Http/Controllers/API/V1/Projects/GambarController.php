@@ -146,90 +146,8 @@ class GambarController extends Controller
 
     }
 
-    // public function predictAngka(Request $req)
-    // {
-    //     ini_set('max_execution_time','300');
-    //     $user = Auth::user();
-    //     $input= $req->all();
-    //     $idSoal= $input['id_soal'];
-    //     $data= (array) $input['img'];
-    //     if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-    //         $folder = env('HasilAngka').'\\'.$user->id;
-    //     } else {
-    //         $folder = env('HasilAngka').'/'.$user->id;
-    //     }
-        
-    //     if (!file_exists($folder)) {
-    //         if (!mkdir($folder, 0777, true)) {
-    //             $m = array('msg' => "REJECTED, cant create folder");
-    //             echo json_encode($m);
-    //             return;
-    //         }
-    //     }
-
-    //     $output= array();
-    //     foreach ($data as $key => $d){
-    //         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-    //             $fullName = $folder."\\X_".$key."_". date("YmdHis") .".png"; // windows pake \\
-    //         } else {
-    //             $fullName = $folder."/X_".$key."_". date("YmdHis") .".png"; // linux pake /
-    //         }
-    //         $ifp = fopen($fullName, "wb");
-    //         fwrite($ifp, base64_decode($d));
-    //         fclose($ifp);
-    //         if (!$ifp) {
-    //             $m = array('masg' => "REJECTED, ".$fullName."not saved" );
-    //             echo json_encode($m);
-    //             return;
-    //         }
-    //         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-    //             // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
-    //             $command = escapeshellcmd("python ".public_path()."\\code\\checkAngka.py ".$fullName);
-    //         } else {
-    //             $command = escapeshellcmd("python ".public_path()."/checkAngka.py ".$fullName);
-    //         }
-    //         // die($command);
-    //         shell_exec($command);
-
-    //         unset($command);
-    //         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-    //             $modelFile= public_path()."\\modelCNN_fold_1Angka.h5";
-    //             $mapFile= public_path()."\\map.npz";
-    //             // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
-    //             $command = escapeshellcmd("python ".public_path()."\\code\\predictCNNAngka.py ".$fullName." ".$mapFile." ".$modelFile);
-    //         } else {
-    //             $modelFile= public_path()."/modelCNN_fold_1Angka.h5";
-    //             $mapFile= public_path()."/map.npz";
-    //             $command = escapeshellcmd("python ".public_path()."/predictCNNAngka.py ".$fullName." ".$mapFile." ".$modelFile);
-    //         }
-    //         // die($command);
-    //         $output[] = shell_exec($command);
-    //     }
-
-    //     $output= implode('',$output);
-    //     $text = preg_replace("/\r|\n/", "", $output);
-
-    //     // $soal = DB::table('soal')->where('id_soal', $idSoal)->first();
-    //     // if ($soal->jawaban == $text) {
-    //     //     $answer = "Benar";
-    //     // }
-    //     // else {
-    //     //     $answer = "Salah";
-    //     // }
-
-    //     // $output= implode('<br>',$output);
-    //     // $msg= 'Data Your files has been successfully added, python : '.$output;
-
-    //     return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
-
-    //     // return response()->json(['success'=>config('global.http.200'), 'message'=>$answer], 200);
-
-
-    // }
-
     public function predictangka(Request $req)
     {
-        ini_set('max_execution_time','300');
         $user = Auth::user();
         $input= $req->all();
         $idSoal= $input['id_soal'];
@@ -277,7 +195,7 @@ class GambarController extends Controller
                 $modelFile= public_path()."\\modelCNN_fold_1Angka.h5";
                 $mapFile= public_path()."\\maps.npz";
                 // $command = escapeshellcmd("python ".public_path()."\\checkFile.py ".$fullName);
-                $command = escapeshellcmd("python ".public_path()."\\code\\predictCNNAngka.py ".$fullName." ".$mapFile." ".$modelFile);
+                 $command = escapeshellcmd("python ".public_path()."\\code\\predictCNNAngka.py ".$fullName." ".$mapFile." ".$modelFile);
             } else {
                 $modelFile= public_path()."/modelCNN_fold_1Angka.h5";
                 $mapFile= public_path()."/maps.npz";
@@ -285,28 +203,14 @@ class GambarController extends Controller
             }
             // die($command);
             $output[] = shell_exec($command);
-
-            // $output[] = file_get_contents("http://127.0.0.1:5000/predictCNN?file=".$fullName."");
         }
 
         $output= implode('',$output);
         $text = preg_replace("/\r|\n/", "", $output);
-
-        // $soal = DB::table('soal')->where('id_soal', $idSoal)->first();
-        // if ($soal->jawaban == $text) {
-        //     $answer = "Benar";
-        // }
-        // else {
-        //     $answer = "Salah";
-        // }
-
         // $output= implode('<br>',$output);
         // $msg= 'Data Your files has been successfully added, python : '.$output;
 
         return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
-
-        // return response()->json(['success'=>config('global.http.200'), 'message'=>$answer], 200);
-
 
     }
 
