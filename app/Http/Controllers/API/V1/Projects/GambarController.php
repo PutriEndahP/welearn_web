@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\V1\Projects;
 
 use App\Http\Controllers\Controller;
 use App\Models\File;
+use App\Models\Score;
 use FilesystemIterator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -136,10 +137,26 @@ class GambarController extends Controller
         //     $answer = "Salah";
         // }
 
+        $soal = DB::table('soal')->where('id_soal', $idSoal)->first();
+        $score = 0;
+        $pesan = "Salah";
+        if($soal->jawaban == $text){
+            $score += 10;
+            $pesan = "Benar";
+        }
+        $data = [
+            'id_user' => $user->id,
+            'id_soal' => $soal->id_soal,
+            'score' => $score,
+            'date_time' => now()
+        ];
+
+        Score::create($data);
+
         // $output= implode('<br>',$output);
         // $msg= 'Data Your files has been successfully added, python : '.$output;
 
-        return response()->json(['success'=>config('global.http.200'), 'message'=>$text], 200);
+        return response()->json(['success'=>config('global.http.200'), 'message'=>$pesan], 200);
 
         // return response()->json(['success'=>config('global.http.200'), 'message'=>$answer], 200);
 

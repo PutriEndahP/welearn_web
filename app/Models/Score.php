@@ -3,14 +3,15 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+// use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Score extends Model
 {
-    use HasFactory;
-    protected $fillabel = [
-        'id_score',
+    protected $table = 'score';
+    protected $primarykey = 'id_score';
+
+    protected $fillable = [
         'id_user',
         'id_soal',
         'score',

@@ -15,7 +15,8 @@ def index_predictCNN():
     nmFile = request.args['file']
     # nmFile =sys.argv[1]
     # mapClass = sys.argv[2]
-    mapClass = 'C:\\xampp\\htdocs\\welearn_web\\public\\map.npz'
+    # mapClass = 'C:\\xampp\\htdocs\\welearn_web\\public\\map.npz'
+    mapClass = 'E:\\KULIAH\\Semester8\\TA\\Kodingan_Baru\\welearn_web\\public\\map.npz'
     if os.path.exists(mapClass):             
         loaded = np.load(mapClass)
         mapHuruf  = loaded['mapHuruf']
@@ -25,7 +26,8 @@ def index_predictCNN():
     kelas=len(mapHuruf)
     fold_no=2
     # nmModel = (sys.argv[3]) # kalo error sys.argv[3] dikasih quote
-    nmModel  = ('C:\\xampp\\htdocs\\welearn_web\\public\\modelCNN_fold_1.h5')
+    # nmModel  = ('C:\\xampp\\htdocs\\welearn_web\\public\\modelCNN_fold_1.h5')
+    nmModel  = ('E:\\KULIAH\\Semester8\\TA\\Kodingan_Baru\\welearn_web\\public\\modelCNN_fold_1.h5')
     # nmModel  = 'mobileNetCNN_097.h5'#-> model_save   
     model = mobileNetCNN(bntk_input,kelas) 
     if os.path.exists(nmModel):             
