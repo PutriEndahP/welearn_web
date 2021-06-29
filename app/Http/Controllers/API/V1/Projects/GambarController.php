@@ -348,7 +348,7 @@ class GambarController extends Controller
     {
         $awal = microtime(true);
         $lv = (int)$level;
-        if($lv > 0 && $lv <= 4){
+        if($lv >= 0 && $lv <= 4){
             $data['soal'] = DB::table('soal')->where('id_level', $level)->where('id_jenis', '2')->get();
             $soal = $data['soal'];
             $jumlah = count($data['soal']);
